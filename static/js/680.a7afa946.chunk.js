@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[680],{680:function(e,o,t){t.r(o);var a=t(3329);o.default=function(){return(0,a.jsx)("h2",{children:"Hey! Welcome to the phone book app! Here you can store all your contacts and use the app as a backup phone book."})}}}]);
+//# sourceMappingURL=680.a7afa946.chunk.js.map
