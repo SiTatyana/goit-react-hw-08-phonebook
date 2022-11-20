@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import * as contactsOperations from '../../redux/contacts/contactsOperations';
 
 const contactsInitialState = {
@@ -39,7 +38,6 @@ const contactsSlice = createSlice({
     [contactsOperations.addContact.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
-      Notify.failure(state.error);
     },
 
     [contactsOperations.deleteContact.pending](state) {
@@ -62,7 +60,6 @@ const contactsSlice = createSlice({
     [contactsOperations.deleteContact.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
-      Notify.failure(state.error);
     },
   },
 });

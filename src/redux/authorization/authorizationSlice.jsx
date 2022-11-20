@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import * as authorizationOperations from './authorizationOperations';
 
@@ -35,7 +34,6 @@ const authorizationSlice = createSlice({
     [authorizationOperations.register.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
-      Notify.failure(state.error);
     },
 
     // LOGIN
@@ -57,7 +55,6 @@ const authorizationSlice = createSlice({
     [authorizationOperations.login.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
-      Notify.failure(state.error);
     },
     // CURRENT
 
@@ -99,7 +96,6 @@ const authorizationSlice = createSlice({
     [authorizationOperations.logout.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
-      Notify.failure(state.error);
     },
   },
 });

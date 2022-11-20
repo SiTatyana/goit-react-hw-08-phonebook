@@ -30,14 +30,22 @@ export const login = createAsyncThunk(
 export const checkCurrent = createAsyncThunk(
   'authorization/current',
   async (_, { rejectWithValue, getState }) => {
-    try {
-      const { authorization } = getState();
-      api.setToken(authorization.token);
+    const { authorization } = getState();
+    api.setToken(authorization.token);
+    if (!authorization.token) {
+      return rejectWithValue();
+    } else {
       const response = await api.getCurrentUser();
       return response.data;
-    } catch (error) {
-      return rejectWithValue(error.message);
     }
+    // try {
+    //   const { authorization } = getState();
+    //   api.setToken(authorization.token);
+    //   const response = await api.getCurrentUser();
+    //   return response.data;
+    // } catch (error) {
+    //   return rejectWithValue(error.message);
+    // }
   }
 );
 
